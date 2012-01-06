@@ -96,6 +96,8 @@
     <Compile Include="Localization\SqlResourceProviderFactory.cs" />
     <Compile Include="Localization\SqlResourceProviderSection.cs" />
     <Compile Include="Localization\SqlResourceReader.cs" />
+    <Compile Include="ModelBinding\DateTimeModelBinder.cs" />
+    <Compile Include="ModelBinding\ModelBindingContextExtensions.cs" />
     <Compile Include="Validation\LengthAttribute.cs" />
     <Compile Include="Validation\MandatoryAttribute.cs" />
     <Compile Include="Validation\MatchAttribute.cs" />

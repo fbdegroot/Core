@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Tests", "Core.Tests\Core.Tests.csproj", "{E3FC6D1D-599E-4CD7-9BBC-D16D6F11646D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.MVC.Tests", "Core.MVC.Tests\Core.MVC.Tests.csproj", "{F1662C62-E842-4A85-B09A-9043197DFBA6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{646FA035-3840-4812-9E7F-AE1799FE4826}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,12 +51,26 @@ Global
 		{E3FC6D1D-599E-4CD7-9BBC-D16D6F11646D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{E3FC6D1D-599E-4CD7-9BBC-D16D6F11646D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{E3FC6D1D-599E-4CD7-9BBC-D16D6F11646D}.Release|x86.ActiveCfg = Release|Any CPU
+		{F1662C62-E842-4A85-B09A-9043197DFBA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1662C62-E842-4A85-B09A-9043197DFBA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1662C62-E842-4A85-B09A-9043197DFBA6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F1662C62-E842-4A85-B09A-9043197DFBA6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F1662C62-E842-4A85-B09A-9043197DFBA6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F1662C62-E842-4A85-B09A-9043197DFBA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1662C62-E842-4A85-B09A-9043197DFBA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1662C62-E842-4A85-B09A-9043197DFBA6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F1662C62-E842-4A85-B09A-9043197DFBA6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F1662C62-E842-4A85-B09A-9043197DFBA6}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F1662C62-E842-4A85-B09A-9043197DFBA6} = {646FA035-3840-4812-9E7F-AE1799FE4826}
+		{E3FC6D1D-599E-4CD7-9BBC-D16D6F11646D} = {646FA035-3840-4812-9E7F-AE1799FE4826}
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		VisualSVNWorkingCopyRoot = .
 		BuildVersion_UseGlobalSettings = True
+		VisualSVNWorkingCopyRoot = .
 	EndGlobalSection
 EndGlobal

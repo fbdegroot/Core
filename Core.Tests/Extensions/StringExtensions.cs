@@ -1,12 +1,12 @@
 ﻿using Core.Extensions;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Core.Tests.Extensions
 {
-	[TestFixture]
+	[TestClass]
 	public class StringExtensions
 	{
-		[Test]
+		[TestMethod]
 		public void FormatPhoneNumber()
 		{
 			// geldige telefoonnummers
