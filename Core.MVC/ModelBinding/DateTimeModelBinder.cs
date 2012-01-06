@@ -7,13 +7,15 @@ namespace Core.MVC.ModelBinding
 	{
 		public object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
 		{
+			// Html.ValidationMessageFor() requires an errorMessage (over an exception) to be set when adding errors to the ModelState
+
+			DateTime result;
+
 			if (bindingContext == null) {
 				throw new ArgumentNullException("bindingContext");
 			}
 
-			DateTime result;
-
-			// datetime split over 3 int inputs
+			// datetime split over 3 inputs
 			if (bindingContext.ValueProvider.ContainsPrefix(bindingContext.ModelName + ".Year") &&
 				bindingContext.ValueProvider.ContainsPrefix(bindingContext.ModelName + ".Month") &&
 				bindingContext.ValueProvider.ContainsPrefix(bindingContext.ModelName + ".Day")) {
@@ -24,13 +26,11 @@ namespace Core.MVC.ModelBinding
 					bindingContext.TryGetValue(".Month", out month) &&
 					bindingContext.TryGetValue(".Day", out day)) {
 
-					string date = string.Format("{0}/{1}/{2}", year, month, day);
-
-					if (DateTime.TryParse(date, out result)) {
+					if (DateTimeFunctions.TryCreate(year, month, day, out result)) {
 						return result;
 					}
 
-					bindingContext.ModelState.AddModelError(bindingContext.ModelName, string.Format(@"""{0}"" is not a valid date", date));
+					bindingContext.ModelState.AddModelError(bindingContext.ModelName, string.Format(@"""{0}/{1}/{2}"" is not a valid date", year, month, day));
 					return null;
 				}
 			}
@@ -49,7 +49,7 @@ namespace Core.MVC.ModelBinding
 				}
 			}
 
-			bindingContext.ModelState.AddModelError(bindingContext.ModelName, "Unable to bind the DateTime");
+			bindingContext.ModelState.AddModelError(bindingContext.ModelName, "Unable to bind the date/time");
 			return null;
 		}
 	}
